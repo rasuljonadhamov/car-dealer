@@ -64,3 +64,9 @@ yarn install
 ```
 
 3. Create a `.env.local` file in the root directory and add the environment variables as shown in the `.env.local` example.
+
+
+4. Deployed Project :
+```
+https://car-dealer-app-ochre.vercel.app/
+```
