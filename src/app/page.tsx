@@ -1,11 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-
-interface Make {
-  MakeId: number
-  MakeName: string
-}
+import { Make } from './types'
 
 export default function HomePage() {
   const [selectedMake, setSelectedMake] = useState<string>('')
@@ -74,7 +70,7 @@ export default function HomePage() {
               </label>
               <select
                 id="make"
-                className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-black"
                 value={selectedMake}
                 onChange={(e) => setSelectedMake(e.target.value)}
                 disabled={isLoading}
@@ -97,7 +93,7 @@ export default function HomePage() {
               </label>
               <select
                 id="year"
-                className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-black"
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
               >

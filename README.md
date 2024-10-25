@@ -34,3 +34,33 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+# Car Dealer Application
+
+## Features
+
+- Filter vehicles by make and year
+- Server-side rendering with Next.js
+- Responsive design using Tailwind CSS
+- Type-safe development with TypeScript
+- Loading states and error handling
+- Zero external UI component dependencies
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd car-dealer-app
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Create a `.env.local` file in the root directory and add the environment variables as shown in the `.env.local` example.
