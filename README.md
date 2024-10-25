@@ -52,8 +52,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd car-dealer-app
+git clone https://github.com/rasuljonadhamov/car-dealer.git
+cd car-dealer
 ```
 
 2. Install dependencies:

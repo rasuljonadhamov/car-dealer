@@ -3,14 +3,8 @@ import VehicleList from '@/components/VehicleList'
 import PageHeader from '@/components/PageHeader'
 import LoadingState from '@/app/loading'
 
-interface PageProps {
-  params: {
-    makeId: string
-    year: string
-  }
-}
 
-export default async function ResultPage({ params }: PageProps) {
+export default async function ResultPage({ params }: any) {
   const pageData = await Promise.resolve(params)
 
   return (
