@@ -15,3 +15,7 @@ export interface Make {
   MakeId: number
   MakeName: string
 }
+
+export interface PageHeaderProps {
+  year: string
+}

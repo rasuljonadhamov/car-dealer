@@ -1,33 +1,28 @@
 import { Suspense } from 'react'
-import Link from 'next/link'
 import VehicleList from '@/components/VehicleList'
-import LoadingState from '@/app/loading';
+import PageHeader from '@/components/PageHeader'
+import LoadingState from '@/app/loading'
 
+interface PageProps {
+  params: {
+    makeId: string
+    year: string
+  }
+}
 
+export default async function ResultPage({ params }: PageProps) {
+  const pageData = await Promise.resolve(params)
 
-export default async function ResultPage({
-  params,
-}: {
-  params: { makeId: string; year: string }
-}) {
   return (
     <main className="min-h-screen p-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">
-            Available Models - {params.year}
-          </h1>
-          <Link
-            href="/"
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-          >
-            Back to Search
-          </Link>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <PageHeader year={pageData.year} />
+        </Suspense>
 
         <div className="bg-white rounded-lg shadow-lg p-6">
           <Suspense fallback={<LoadingState />}>
-            <VehicleList makeId={params.makeId} year={params.year} />
+            <VehicleList makeId={pageData.makeId} year={pageData.year} />
           </Suspense>
         </div>
       </div>
@@ -37,7 +32,8 @@ export default async function ResultPage({
 
 export async function generateStaticParams() {
   const currentYear = new Date().getFullYear()
-  const popularMakeIds = ['440', '441', '442'] 
+  const popularMakeIds = ['440', '441', '442']
+  
   const recentYears = [
     currentYear.toString(),
     (currentYear - 1).toString(),
